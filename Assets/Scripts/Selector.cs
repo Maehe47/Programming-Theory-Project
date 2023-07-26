@@ -32,7 +32,6 @@ public class Selector : Unit
                 GetScript();
                 Select();
             
-
         }
     }
     private void GetScript()
