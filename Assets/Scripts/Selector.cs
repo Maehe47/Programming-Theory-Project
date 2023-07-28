@@ -6,37 +6,26 @@ using UnityEngine;
 public class Selector : Unit
 {
     public GameObject[] selection;
-    public int index = 0;
+    private int index = 0;
     public Component selectedUnit;
-    //public Unit unit;
-    public string Unitname;
-    //public Sphere sphere;
-    
+    private string unitName;
+
     private void Start()
     {
-       // unit = gameObject.GetComponent<Unit>();
-        
-        GetScript();
-        
+        GetScript();   
     }
     private void Update()
     {
-        
         if (Input.GetButtonDown("Jump")==true)
         {
-           
-            
-                Debug.Log("space");
-                Deselect();
                 if (index < selection.Length -1) { index++; } else { index = 0; }    
-                GetScript();
-                Select();
-            
+                GetScript();            
         }
     }
     private void GetScript()
     {
-        Unitname = selection[index].name;
-        selectedUnit = selection[index].GetComponent(Unitname);
+        unitName = selection[index].name;
+        selectedUnit = selection[index].GetComponent(unitName);
     }
+    
 }
